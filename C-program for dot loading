@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <conio.h>
+#include <windows.h>
+
+main ()
+{
+	int i=0;
+	SetConsoleTitle("Loading");
+	while (i<=10) // you can add 100 instead of 10
+	{
+		printf("\t\t\t\t.",i);
+		Sleep(500);
+		printf(".",i);
+		Sleep(500);
+		printf(".",i);
+		Sleep(250);
+		i++;
+		system("cls");
+	}
+	SetConsoleTitle("Sucess");
+	printf("loading sucess!");
+	getch();
+}
