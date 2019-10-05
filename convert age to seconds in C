@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <conio.h>
+#include <windows.h>
+
+main()
+{
+	int age,sec;
+	char name[20];
+AGAIN:	
+	printf("Enter Your Name : ");
+	scanf("%s",&name);
+	printf("Enter your Age : ");
+	scanf("%d",&age);
+	if(age<1)
+	{
+		printf("\nEnter age greater then 0\n");
+		system("pause");
+		system("cls");
+		goto AGAIN;	
+	}
+	
+	printf("converting to seconds...");
+	sec=age * 31560000; //31560000 sec == 1 year
+	printf("\n%s you are almost %d seconds old ",name,sec);
+getch(); 
+}
