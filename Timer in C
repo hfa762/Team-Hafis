@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <conio.h>
+#include <windows.h>
+main()
+{
+	int hour,min,sec;
+	SetConsoleTitle("Timer");
+START:
+	printf("Enter Hour : ");
+	scanf("%d",&hour);
+	if(hour > 24)
+	{
+		printf("\nHours cannot be exceeded by 24\n");
+		system("pause");
+		system("cls");
+		goto START;
+	}
+	printf("Enter Minutes : ");
+	scanf("%d",&min);
+	if(min > 60)
+	{
+		printf("\nMinutes cannot be exceeded by 60\n");
+		system("pause");
+		system("cls");
+		goto START;
+	}
+	printf("Enter Seconds : ");
+	scanf("%d",&sec);
+	if(sec>60)
+	{
+		printf("\nSeconds cannot be exceeded by 60\n");
+		system("pause");
+		system("cls");
+		goto START;
+	}
+	
+	system("cls");
+	
+	printf("Timer has been set to %d hour %d minutes %d seconds",hour,min,sec);
+	
+	while(hour!=0)
+	{
+		printf("\t\t\t\t%d|%d|%d",hour,min,sec);
+		hour--;
+		Sleep(3600000); //3600000ms = 1hour
+		system("cls");
+	}
+	while(min!=0)
+	{
+		printf("\t\t\t\t%d|%d|%d",hour,min,sec);
+		min--;
+		Sleep(60000);//60000ms = 1min
+		system("cls");
+	}
+	while(sec!=0)
+	{
+		printf("\t\t\t\t%d|%d|%d",hour,min,sec);
+		sec--;
+		Sleep(1000); //1000 ms = 1sec
+		if(sec < 10)
+		{
+			system("COLOR C0");//red
+			Beep(1000,1000);
+			Sleep(100);
+			system("COLOR F3");//white
+		}
+		system("cls");
+	}
+	printf("\nTime is up");
+	getch();
+}
