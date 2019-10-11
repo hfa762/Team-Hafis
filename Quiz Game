@@ -1,0 +1,388 @@
+#include <stdio.h>
+#include <conio.h>
+#include <windows.h>
+
+main(){
+	
+	int score=0,scorelvl2=0,scorelvl3=0,lvl;
+	int mainq,id,opt;
+	int q1,q2,q3,q4,q5,q6,q7,q8,q9;//Quiz
+	system("COLOR 0A");//green text
+MAINQ:	
+SetConsoleTitle("Quiz Game");
+printf("Welcome to quiz game\n");
+printf("1 > Play Game\n");
+printf("2 > Select level\n");
+printf("3 > Exit");
+printf("\nEnter Option : ");
+scanf("%d",&mainq);
+
+   if(mainq > 3){
+	system("cls");
+	goto MAINQ;
+}
+
+switch(mainq){
+	case 1 :
+		system("cls");
+		goto lvl1;
+	case 2 :
+		SetConsoleTitle("Select Level");
+		system("cls");
+		printf("Select Level \n");
+		printf("1 > Level 1\n");
+		printf("2 > Level 2\n");
+		printf("3 > Level 3\n");
+		printf("\nEnter Option : ");
+		scanf("%d",&opt);
+		
+		switch(opt){
+			case 1 :
+				system("cls");
+				goto lvl1;
+				break;
+			case 2 :
+				system("cls");
+				goto lvl2;
+				break;
+			case 3 :
+				system("cls");
+				goto lvl3;
+				break;
+		}
+		
+		
+	case 3 :
+		return 0;
+		break;
+}
+
+lvl1:
+	SetConsoleTitle("Level 1");
+	printf("[Level : 1]\n\n");
+	
+	printf("The world largest Desert is ?\n");
+	printf("1 > Thar 2 > Kalhari 3 > Sahara 4 > Sonoran\n");
+	printf("Enter Correct Option : ");
+	scanf("%d",&q1);
+	if( q1 > 4){
+		system("cls");
+		goto lvl1;
+	}
+
+    if (q1 == 3){
+    	score =10;
+    	printf("\t\t\t\t\t\t\t Score = %d",score);
+    	printf("\n\t\t\t\t\t\t\t Correct Answer");
+	}else{
+		score =0;
+		system("COLOR C0");//red
+		Sleep(400);
+		system("COLOR 0A ");
+    	printf("\t\t\t\t\t\t\t Score = %d",score);
+    	printf("\n\t\t\t\t\t\t\t Wrong Answer");		
+	}
+
+	printf("\nThe metal whose salts are sensitive to light is ?\n");
+	printf("1 > Zinc 2 > Silver 3 > Copper 4 > Aluminum\n");
+	printf("Enter Correct Option : ");
+	scanf("%d",&q2);
+	if( q2 > 4){
+		system("cls");
+		goto lvl1;
+	}
+
+    if (q2 == 2){
+    	score = score +10;
+    	printf("\t\t\t\t\t\t\t Score = %d",score);
+    	printf("\n\t\t\t\t\t\t\t Correct Answer");
+	}else{
+		score = score -10;
+		system("COLOR C0");//red
+		Sleep(400);
+		system("COLOR 0A ");
+    	printf("\t\t\t\t\t\t\t Score = %d",score);
+    	printf("\n\t\t\t\t\t\t\t Wrong Answer");		
+	}
+	
+	
+	
+	printf("\nCountry that has the highest in Barley Production ?");
+	printf("\n1 > china 2 > Pakistan 3 > Russia 4 > france");
+	printf("\nEnter Correct option : ");
+	scanf("%d",&q3);
+		if(q3 > 4)
+	{
+		system("cls");
+		goto lvl1;
+	}
+	if(q3==3)
+	{
+		score = score+10;
+		printf("\t\t\t\t\t\t\t Score = %d",score);
+		printf("\n\t\t\t\t\t\t\t Correct Answer");
+	}else{
+		score = score -10;
+		system("COLOR C0");//red
+		Sleep(400);
+		system("COLOR 0A"); //black background //green text
+        printf("\t\t\t\t\t\t\tScore = %d",score);
+		printf("\n\t\t\t\t\t\t\tWrong Answer");
+		
+	}
+	
+//result of lvl1
+
+if(score == 30){
+	printf("\ncongratulations you have been promoteg to Level 2\n");
+	lvl =2;
+	system("pause");
+	system("cls");
+}else if(score == 20){
+	printf("\nYour score is 20 get 30 score to get level 2\n",score);
+    	system("pause");
+	system("cls");
+	goto MAINQ;
+}else if(score == 10){
+	printf("\n Your score is 10 get 30 score to get level 2\n",score);
+		system("pause");
+	system("cls");
+	goto MAINQ;
+}else if(score == 0){
+	printf("\n your score is 0 get 30 score to get level 2\n",score);
+		system("pause");
+	system("cls");
+	goto MAINQ;
+}else{
+	printf("\n Your score is too low get 30 score to get level 2\n",score);
+		system("pause");
+	system("cls");
+	goto MAINQ;
+}
+	
+
+if( lvl == 2){
+	lvl2:
+	system("cls");
+	SetConsoleTitle("Level 2");
+	printf("[Level : 2]\n\n");
+	
+	printf("\nFirst China War was fought between");
+	printf("\n 1 > China and Britain 2 > China and France. 3 > China and Egypt 4 >China and Greek");
+	printf("\nEnter Correct Option : ");
+	scanf("%d",&q4);
+	if(q4 > 4){
+		system("cls");
+		goto lvl2;
+	}
+	if(q4 == 1){
+		scorelvl2=10;
+		printf("\t\t\t\t\t\t\t Score = %d",scorelvl2);
+		printf("\n\t\t\t\t\t\t\t Correct Answer");
+	}else{
+		scorelvl2 = 0;
+		system("COLOR C0");//red
+		Sleep(400);
+		system("COLOR 0A"); //black background //green text
+        printf("\t\t\t\t\t\t\tScore = %d",scorelvl2);
+		printf("\n\t\t\t\t\t\t\tWrong Answer");
+	}
+	
+	printf("\nWhat is the Capital of Pakistan");
+	printf("\n 1 > Lahore 2 > Quetta 3 > Islamabad 4 >Karachi");
+	printf("\nEnter Correct Option : ");
+	scanf("%d",&q5);
+	if(q5 > 4){
+		system("cls");
+		goto lvl2;
+	}
+	if(q5 == 3){
+		scorelvl2=scorelvl2+10;
+		printf("\t\t\t\t\t\t\t Score = %d",scorelvl2);
+		printf("\n\t\t\t\t\t\t\t Correct Answer");
+	}else{
+		scorelvl2 = scorelvl2-10;
+		system("COLOR C0");//red
+		Sleep(400);
+		system("COLOR 0A"); //black background //green text
+        printf("\t\t\t\t\t\t\tScore = %d",scorelvl2);
+		printf("\n\t\t\t\t\t\t\tWrong Answer");
+	}
+	
+	
+	
+		printf("\nMicrosoft was founded by?");
+	printf("\n 1 > billgates 2 > jeff 3 > steve 4 > mark ");
+	printf("\nEnter Correct Option : ");
+	scanf("%d",&q6);
+	if(q6 > 4){
+		system("cls");
+		goto lvl2;
+	}
+	
+	if(q6 == 1){
+		scorelvl2=scorelvl2+10;
+		printf("\t\t\t\t\t\t\t Score = %d",scorelvl2);
+		printf("\n\t\t\t\t\t\t\t Correct Answer");
+	}else{
+		scorelvl2 = scorelvl2-10;
+		system("COLOR C0");//red
+		Sleep(400);
+		system("COLOR 0A"); //black background //green text
+        printf("\t\t\t\t\t\t\tScore = %d",scorelvl2);
+		printf("\n\t\t\t\t\t\t\tWrong Answer");
+	}
+	
+	if(scorelvl2 == 30){
+	printf("\ncongratulations you have been promoted to Level 3\n");
+	lvl =3;
+	system("pause");
+	system("cls");
+}else if(scorelvl2 == 20){
+	printf("\nYour score is 20 get 30 score to get level 2\n",scorelvl2);
+    	system("pause");
+	system("cls");
+	goto MAINQ;
+}else if(scorelvl2 == 10){
+	printf("\n Your score is 10 get 30 score to get level 2\n",scorelvl2);
+		system("pause");
+	system("cls");
+	goto MAINQ;
+}else if(scorelvl2 == 0){
+	printf("\n your score is 0 get 30 score to get level 2\n",scorelvl2);
+		system("pause");
+	system("cls");
+	goto MAINQ;
+}else{
+	printf("\n Your score is too low get 30 score to get level 2\n",scorelvl2);
+		system("pause");
+	system("cls");
+	goto MAINQ;
+}
+	
+}
+
+
+if(lvl == 3){
+	lvl3:
+	system("cls");
+	SetConsoleTitle("Level 3");
+	printf("[Level : 3]\n\n");	
+	
+	printf("\nFirst Afghan War took place in");
+	printf("\n 1 > 1839 2 > 1843 3 > 1833 4 > 1848");
+	printf("\nEnter Correct Option : ");
+	scanf("%d",&q7);
+	if(q7 > 4){
+		system("cls");
+		goto lvl3;
+	}
+	if(q7 == 1){
+		scorelvl3=10;
+		printf("\t\t\t\t\t\t\t Score = %d",scorelvl3);
+		printf("\n\t\t\t\t\t\t\t Correct Answer");
+	}else{
+		scorelvl3 = 0;
+		system("COLOR C0");//red
+		Sleep(400);
+		system("COLOR 0A"); //black background //green text
+        printf("\t\t\t\t\t\t\tScore = %d",scorelvl3);
+		printf("\n\t\t\t\t\t\t\tWrong Answer");
+	}
+	
+	
+	printf("\nGrand Central Terminal, Park Avenue, New York is the world's");
+	printf("\n 1 > largest railway station\n 2 > highest railway station\n 3 > longest railway station\n 4 > None of the above");
+	printf("\nEnter Correct Option : ");
+	scanf("%d",&q8);
+	if(q8 > 4){
+		system("cls");
+		goto lvl3;
+	}
+	if(q8 == 1){
+		scorelvl3=scorelvl3+10;
+		printf("\t\t\t\t\t\t\t Score = %d",scorelvl3);
+		printf("\n\t\t\t\t\t\t\t Correct Answer");
+	}else{
+		scorelvl3 = scorelvl3-10;
+		system("COLOR C0");//red
+		Sleep(400);
+		system("COLOR 0A"); //black background //green text
+        printf("\t\t\t\t\t\t\tScore = %d",scorelvl3);
+		printf("\n\t\t\t\t\t\t\tWrong Answer");
+	}
+	
+	printf("\nGermany signed the Armistice Treaty on ____ and World War I ended");
+	printf("\n 1 > January 19, 1918\n 2 > May 30, 1918\n 3 > November 11, 1918\n 4 > February 15, 1918");
+	printf("\nEnter Correct Option : ");
+	scanf("%d",&q9);
+	if(q9 > 4){
+		system("cls");
+		goto lvl3;
+	}
+	if(q9 == 3){
+		scorelvl3=scorelvl3+10;
+		printf("\t\t\t\t\t\t\t Score = %d",scorelvl3);
+		printf("\n\t\t\t\t\t\t\t Correct Answer");
+	}else{
+		scorelvl3 = scorelvl3-10;
+		system("COLOR C0");//red
+		Sleep(400);
+		system("COLOR 0A"); //black background //green text
+        printf("\t\t\t\t\t\t\tScore = %d",scorelvl3);
+		printf("\n\t\t\t\t\t\t\tWrong Answer");
+	}
+	
+		if(scorelvl3 == 30){
+	printf("\ncongratulations you have complete all the levels\n");
+	lvl ='c';
+	system("pause");
+	system("cls");
+}else if(scorelvl3 == 20){
+	printf("\nYour score is 20 get 30 score to complete the game\n",scorelvl3);
+    	system("pause");
+	system("cls");
+	goto MAINQ;
+}else if(scorelvl3 == 10){
+	printf("\n Your score is 10 get 30 score to complete the game\n",scorelvl3);
+		system("pause");
+	system("cls");
+	goto MAINQ;
+}else if(scorelvl3 == 0){
+	printf("\n your score is 0 get 30 score to complete the game\n",scorelvl3);
+		system("pause");
+	system("cls");
+	goto MAINQ;
+}else{
+	printf("\n Your score is too low get 30 score to complete the game\n",scorelvl3);
+		system("pause");
+	system("cls");
+	goto MAINQ;
+}
+	
+}//
+
+if(lvl == 'c'){
+	SetConsoleTitle("Congratulations ");
+	printf("Score of level 1 : %d\n",score);
+	printf("Score of level 2 : %d\n",scorelvl2);
+	printf("Score of Level 3 : %d\n",scorelvl3);
+    
+    int cg;
+    printf("1 > Go to Main \n");
+    printf("2 > Exit \n");
+    printf("Enter Option : ");
+    scanf("%d",&cg);
+    switch(cg){
+    	case 1:
+    		system("cls");
+    		goto MAINQ;
+    		break;
+    	case 2 :
+    		return 0;
+            break;
+	}
+	
+}
+	getch();
+}
