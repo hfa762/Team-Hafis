@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <conio.h>
+
+
+
+int main()
+{
+	int tabno,tablen,max,x;
+	
+ 
+	printf("Enter table Number: ");
+	scanf("%d", &tabno);
+	printf("Enter table length : ");
+	scanf("%d", &tablen);
+
+    for (x=1;x<=tablen;x++)
+    printf(" %d X %d = %d\n",tabno,x,tabno*x);
+
+	getch();
+}
+
+
