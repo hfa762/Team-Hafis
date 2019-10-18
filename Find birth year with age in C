@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <conio.h> 
+
+main(){
+	
+int age,year;
+
+	printf("Enter age to find birth year: ");
+	scanf("%d",&age); 
+	year=2019-age; 
+    printf("Year : %d",year); 
+    getch();
+}
