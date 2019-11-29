@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <conio.h>
+#include <windows.h>
+#include <string.h>
+
+main(){
+	
+	char name[20];
+	char pass[20];
+	int p =0;
+	SetConsoleTitle("Please Login");
+again:
+	printf("Enter Username : ");
+	scanf("%s",&name);
+	printf("Enter Password : ");
+	scanf("%c",&pass);
+	
+	//for *
+	
+    do{ 
+        pass[p]=getch(); 
+        if(pass[p]!='\r'){ 
+            printf("*"); 
+        } 
+        p++; 
+    }while(pass[p-1]!='\r'); 
+    pass[p-1]='\0';
+    
+    if(strcmp(name,"yourname")==0){
+    	if(strcmp(pass,"123")==0){
+         printf("\nLogged in sucessfuly\n");
+         system("pause");
+         system("cls");
+         goto sucess;
+    		
+    		
+    		
+		}else{
+			
+			printf("\nWrong password\n");
+		    system("pause");
+			system("cls");
+			goto again;
+		}
+    	
+    	
+    	
+	}else{
+		printf("\nWrong Username\n");
+		system("pause");
+		system("cls");
+		goto again;
+	}
+
+sucess:
+
+printf("sucess");
+
+
+
+
+getch();	
+}
